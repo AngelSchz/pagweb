@@ -1,0 +1,274 @@
+/* Estilo base del sitio */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: goldenrod;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+}
+
+/* Contenedor superior: logo, frase, botón */
+.logo-frase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  width: 140px;
+  height: auto;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  box-shadow: 0 0 10px red;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Frase centrada */
+.frase {
+  font-size: 2rem;
+  font-weight: bold;
+  color: goldenrod;
+  margin: 0 auto;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Botón con imagen de flecha */
+.boton-regresar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.flecha {
+  width: 140px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(50%) saturate(483%) hue-rotate(2deg) brightness(90%) contrast(90%);
+}
+
+.flecha:hover {
+  transform: scale(1.05);
+}
+
+/* Menú de navegación */
+.nav_links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav_links a {
+  text-decoration: none;
+  color: goldenrod;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav_links a:hover {
+  color: white;
+}
+
+/* Línea dorada divisora */
+.divider {
+  border: none;
+  border-top: 1px solid goldenrod;
+  margin: 0.5rem auto;
+  width: 90%;
+}
+
+/* Frase promocional */
+.promo-frase {
+  text-align: center;
+  font-size: 1rem;
+  color: goldenrod;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-style: italic;
+}
+
+/* ------------------------- */
+/* index.html - Imágenes centradas (4 por fila) */
+.imagenes-centradas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.img-promocion {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border: 3px solid goldenrod;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.img-promocion:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------- */
+/* indexwhisky.html - Imágenes (5 por fila) */
+.contenedor-imagenes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.contenedor-imagenes .img-promocion {
+  max-width: 180px;
+}
+
+/* ------------------------- */
+/* indexpromo.html - Imágenes de promociones */
+.promo-contenedor {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.promo-contenedor img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  border: 3px solid goldenrod;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.promo-contenedor img:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------- */
+/* Responsive tablets */
+@media (max-width: 900px) {
+  /* Header y menú adaptado */
+  .logo-frase {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .frase {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .nav_links {
+    gap: 1rem;
+  }
+
+  /* index.html */
+  .imagenes-centradas {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    width: fit-content;
+  }
+
+  /* indexwhisky.html */
+  .contenedor-imagenes {
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+  }
+
+  /* indexpromo.html */
+  .promo-contenedor {
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .flecha {
+    width: 110px;
+  }
+}
+
+/* ------------------------- */
+/* Responsive móviles */
+@media (max-width: 600px) {
+  /* Header y menú completamente centrado */
+  .logo-frase {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .logo,
+  .flecha {
+    width: 90px;
+  }
+
+  .frase {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+
+  .nav_links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  /* index.html */
+  .imagenes-centradas {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  /* indexwhisky.html */
+  .contenedor-imagenes {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* indexpromo.html */
+  .promo-contenedor {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .promo-contenedor img {
+    max-width: 100%;
+  }
+}
