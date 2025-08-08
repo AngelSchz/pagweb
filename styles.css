@@ -64,15 +64,15 @@ html, body {
 /* Menú de navegación */
 .nav_links {
   display: flex;
-  justify-content: center;      /* Centra los items horizontalmente */
+  justify-content: center;
   list-style: none;
   gap: 2rem;
-  padding: 1rem 2rem;            /* Padding lateral para que no pegue a las orillas */
-  margin: 0 auto;
-  max-width: 700px;              /* Ancho máximo para que no se extienda demasiado */
-  box-sizing: border-box;
-  flex-wrap: nowrap;             /* Todo en una sola línea */
-  overflow-x: auto;              /* Scroll horizontal si pantalla muy pequeña */
+  padding: 1rem 0;
+  margin: 0;
+  flex-wrap: nowrap;
+  max-width: 600px;  /* para centrar sin que se pegue a bordes */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav_links a {
@@ -81,7 +81,6 @@ html, body {
   font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.3s ease;
-  white-space: nowrap;           /* Evita que enlaces hagan salto de línea */
 }
 
 .nav_links a:hover {
@@ -179,6 +178,52 @@ html, body {
 }
 
 /* ------------------------- */
+/* Bloque WhatsApp centrado */
+.contacto-whats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  border: 3px solid goldenrod;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  background-color: black;
+  color: goldenrod;
+}
+
+.img-whats {
+  max-width: 80px;
+  height: auto;
+  border: 3px solid goldenrod;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.img-whats:hover {
+  transform: scale(1.05);
+}
+
+.contacto-texto h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: left;
+  color: goldenrod;
+}
+
+.contacto-texto p {
+  margin: 0.3rem 0 0 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: left;
+  color: goldenrod;
+}
+
+/* ------------------------- */
 /* Responsive tablets */
 @media (max-width: 900px) {
   /* Header y menú adaptado */
@@ -196,6 +241,7 @@ html, body {
 
   .nav_links {
     gap: 1rem;
+    max-width: 100%;
   }
 
   /* index.html */
@@ -244,29 +290,22 @@ html, body {
     margin: 0.5rem 0;
   }
 
-  /* Menú en una línea con scroll horizontal y padding */
   .nav_links {
-    flex-wrap: nowrap;
-    gap: 1rem;
-    padding: 1rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
     max-width: 100%;
-    overflow-x: auto;
-    justify-content: center;
-  }
-
-  .nav_links a {
-    font-size: 1rem;
   }
 
   /* index.html */
   .imagenes-centradas {
-    grid-template-columns: repeat(2, 1fr);  /* 2 por renglon */
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
     width: 90%;
   }
 
   /* indexwhisky.html */
   .contenedor-imagenes {
-    grid-template-columns: repeat(2, 1fr);  /* 2 por renglon */
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -274,7 +313,7 @@ html, body {
 
   /* indexpromo.html */
   .promo-contenedor {
-    grid-template-columns: repeat(2, 1fr);  /* 2 por renglon */
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
     width: 90%;
     margin-left: auto;
     margin-right: auto;
