@@ -42,37 +42,22 @@ html, body {
   text-align: center;
 }
 
-/* Botón con imagen de flecha */
-.boton-regresar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.flecha {
-  width: 140px;
-  height: auto;
-  transition: transform 0.3s ease;
-  filter: brightness(0) saturate(100%) invert(73%) sepia(50%) saturate(483%) hue-rotate(2deg) brightness(90%) contrast(90%);
-}
-
-.flecha:hover {
-  transform: scale(1.05);
-}
-
 /* Menú de navegación */
 .nav_links {
   display: flex;
-  justify-content: center;
+  justify-content: center;   
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 1rem 0;
-  margin: 0;
-  flex-wrap: nowrap;
-  max-width: 600px;  /* para centrar sin que se pegue a bordes */
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  max-width: 600px;
+  flex-wrap: nowrap;        
+  white-space: nowrap;      
+}
+
+.nav_links li {
+  white-space: nowrap;
+  flex-shrink: 1; /* permite que los items se encojan */
 }
 
 .nav_links a {
@@ -81,6 +66,8 @@ html, body {
   font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .nav_links a:hover {
@@ -226,7 +213,6 @@ html, body {
 /* ------------------------- */
 /* Responsive tablets */
 @media (max-width: 900px) {
-  /* Header y menú adaptado */
   .logo-frase {
     flex-direction: column;
     align-items: center;
@@ -244,18 +230,15 @@ html, body {
     max-width: 100%;
   }
 
-  /* index.html */
   .imagenes-centradas {
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     width: fit-content;
   }
 
-  /* indexwhisky.html */
   .contenedor-imagenes {
     grid-template-columns: repeat(3, minmax(130px, 1fr));
   }
 
-  /* indexpromo.html */
   .promo-contenedor {
     grid-template-columns: repeat(3, minmax(130px, 1fr));
   }
@@ -272,7 +255,6 @@ html, body {
 /* ------------------------- */
 /* Responsive móviles */
 @media (max-width: 600px) {
-  /* Header y menú completamente centrado */
   .logo-frase {
     flex-direction: column;
     align-items: center;
@@ -291,19 +273,27 @@ html, body {
   }
 
   .nav_links {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
+    flex-wrap: nowrap;        
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
     max-width: 100%;
+    white-space: nowrap;
   }
 
-  /* index.html */
+  .nav_links li {
+    flex-shrink: 1; /* importante para que se reduzcan si es necesario */
+  }
+
+  .nav_links a {
+    font-size: 1rem; /* tamaño de texto más pequeño en móvil */
+  }
+
   .imagenes-centradas {
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     width: 90%;
   }
 
-  /* indexwhisky.html */
   .contenedor-imagenes {
     grid-template-columns: repeat(2, minmax(130px, 1fr));
     width: 90%;
@@ -311,7 +301,6 @@ html, body {
     margin-right: auto;
   }
 
-  /* indexpromo.html */
   .promo-contenedor {
     grid-template-columns: repeat(2, minmax(130px, 1fr));
     width: 90%;
