@@ -64,12 +64,15 @@ html, body {
 /* Menú de navegación */
 .nav_links {
   display: flex;
-  justify-content: center;
+  justify-content: center;      /* Centra los items horizontalmente */
   list-style: none;
   gap: 2rem;
-  padding: 1rem 0;
-  margin: 0;
-  flex-wrap: wrap;
+  padding: 1rem 2rem;            /* Padding lateral para que no pegue a las orillas */
+  margin: 0 auto;
+  max-width: 700px;              /* Ancho máximo para que no se extienda demasiado */
+  box-sizing: border-box;
+  flex-wrap: nowrap;             /* Todo en una sola línea */
+  overflow-x: auto;              /* Scroll horizontal si pantalla muy pequeña */
 }
 
 .nav_links a {
@@ -78,6 +81,7 @@ html, body {
   font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.3s ease;
+  white-space: nowrap;           /* Evita que enlaces hagan salto de línea */
 }
 
 .nav_links a:hover {
@@ -240,21 +244,29 @@ html, body {
     margin: 0.5rem 0;
   }
 
+  /* Menú en una línea con scroll horizontal y padding */
   .nav_links {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .nav_links a {
+    font-size: 1rem;
   }
 
   /* index.html */
   .imagenes-centradas {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);  /* 2 por renglon */
     width: 90%;
   }
 
   /* indexwhisky.html */
   .contenedor-imagenes {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);  /* 2 por renglon */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -262,7 +274,7 @@ html, body {
 
   /* indexpromo.html */
   .promo-contenedor {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);  /* 2 por renglon */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
